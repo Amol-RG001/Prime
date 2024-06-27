@@ -1,0 +1,9 @@
+MICROSERVICES NOTES
+
+1) Monolithic Architecture
+
+Monolithic architecture is like having a big, single piece of software where all the different parts of an application are tightly connected and work together. In software terms, this means the entire application is developed, deployed, and scaled as a single unit, making it simpler to start with but potentially harder to change or scale as it grows.
+
+2) Microservice Architecture
+
+Microservices architecture is a way of designing software applications as a collection of small, independent services, each focused on performing a specific task or function.
