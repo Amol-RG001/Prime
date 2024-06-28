@@ -1,0 +1,49 @@
+SELENIUM NOTES
+
+1) what is selenium
+-> it is  opern source automation test suite for web based application across different browser and different platform.
+-> it support multiple programming languages like java, ruby, python.
+
+2) component of selenium
+-> Selenium Software is not just a single tool but a suite of software, each piece catering to different Selenium QA testing needs of an organization. Here is the list of tools
+
+a) Selenium Integrated Development Environment (IDE)
+b) Selenium Remote Control (RC)
+c) WebDriver
+d) Selenium Grid
+
+3) what is selenium IDE
+-> Selenium IDE stands for Intregrated Developement Environment
+-> It is simple and easy to used
+-> It is used  as prototyping tool
+-> No prior programming knowledge is required
+-> No advanced testing can do in IDE
+
+4) What is selenium web driver
+-> it is a component of selenium suite
+-> it is a java interface implemented by browser classes
+-> it is an API(Application Programming Interface) mediator between browser and client libraries
+-> it has various commands to interact with web elements
+
+5) What is selenium grid
+-> It allow test cases to run parallelly in 
+	a) different machines 
+	b) different plaforms 
+	c) different browers
+
+6) Advantages of selenium web driver
+-> it is a open source tool
+-> it supports multiple browers like (Firefox, Chrome, Opera etc.)
+-> it supports multiple platforms like (Windows, Linux, MacOs etc.)
+-> it supports multiple languages like (Java, Ruby, Python etc.)
+
+7) Dis-advantages of selenium web driver
+-> it support web based application doesn't support window based application
+-> it does not have reporting feature
+-> it does not provide facilty for data driven testing
+
+Third Party Tools To Overcome Disadvantages
+-> Windows Operation - Autoit
+-> Data Driven testing - Apache POI
+-> Reporting - Extent Report
+
