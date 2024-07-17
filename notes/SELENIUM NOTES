@@ -1,49 +1,71 @@
 SELENIUM NOTES
 
 1) what is selenium
--> it is  opern source automation test suite for web based application across different browser and different platform.
--> it support multiple programming languages like java, ruby, python.
+-> 	it is  opern source automation test suite for web based application across different browser and different platform.
+-> 	it support multiple programming languages like java, ruby, python.
 
 2) component of selenium
--> Selenium Software is not just a single tool but a suite of software, each piece catering to different Selenium QA testing needs of an organization. Here is the list of tools
+->	Selenium Software is not just a single tool but a suite of software, each piece catering to different Selenium QA testing needs of an organization. Here is the list of tools
 
-a) Selenium Integrated Development Environment (IDE)
-b) Selenium Remote Control (RC)
-c) WebDriver
-d) Selenium Grid
+	a) Selenium Integrated Development Environment (IDE)
+	b) Selenium Remote Control (RC)
+	c) WebDriver
+	d) Selenium Grid
 
 3) what is selenium IDE
--> Selenium IDE stands for Intregrated Developement Environment
--> It is simple and easy to used
--> It is used  as prototyping tool
--> No prior programming knowledge is required
--> No advanced testing can do in IDE
+-> 	Selenium IDE stands for Intregrated Developement Environment
+-> 	It is simple and easy to used
+-> 	It is used  as prototyping tool
+-> 	No prior programming knowledge is required
+-> 	No advanced testing can do in IDE
 
 4) What is selenium web driver
--> it is a component of selenium suite
--> it is a java interface implemented by browser classes
--> it is an API(Application Programming Interface) mediator between browser and client libraries
--> it has various commands to interact with web elements
+-> 	it is a component of selenium suite
+-> 	it is a java interface implemented by browser classes
+-> 	it is an API(Application Programming Interface) mediator between browser and client libraries
+-> 	it has various commands to interact with web elements
 
 5) What is selenium grid
--> It allow test cases to run parallelly in 
-	a) different machines 
-	b) different plaforms 
-	c) different browers
+-> 	It allow test cases to run parallelly in 
+		a) different machines 
+		b) different plaforms 
+		c) different browers
 
 6) Advantages of selenium web driver
--> it is a open source tool
--> it supports multiple browers like (Firefox, Chrome, Opera etc.)
--> it supports multiple platforms like (Windows, Linux, MacOs etc.)
--> it supports multiple languages like (Java, Ruby, Python etc.)
+-> 	it is a open source tool
+-> 	it supports multiple browers like (Firefox, Chrome, Opera etc.)
+-> 	it supports multiple platforms like (Windows, Linux, MacOs etc.)
+-> 	it supports multiple languages like (Java, Ruby, Python etc.)
 
 7) Dis-advantages of selenium web driver
--> it support web based application doesn't support window based application
--> it does not have reporting feature
--> it does not provide facilty for data driven testing
+-> 	it support web based application doesn't support window based application
+-> 	it does not have reporting feature
+-> 	it does not provide facilty for data driven testing
 
 Third Party Tools To Overcome Disadvantages
--> Windows Operation - Autoit
--> Data Driven testing - Apache POI
--> Reporting - Extent Report
+-> 	Windows Operation - Autoit
+-> 	Data Driven testing - Apache POI
+-> 	Reporting - Extent Report
 
+8) BDD (Behavior-Driven Development)
+-> BDD is a development approach that involves collaboration between developers, testers, and business stakeholders. It encourages writing test cases in a natural language that non-technical stakeholders can understand. This approach uses tools like Cucumber and Gherkin.
+
+9) Use of Driver in Selenium
+-> The WebDriver is used to control the browser. It can be used to open, navigate, and interact with web pages.
+
+10) What is the page factory Why do we use it?
+-> Page Factory is a class in Selenium that supports the Page Object Model design pattern. It helps to initialize elements of a Page Object class
+
+11)Fluent Wait is used to define the maximum amount of time to wait for a condition and the frequency with which to check the condition.
+
+12) What is locator in selenium ?
+
+-> Locators in Selenium are used to identify web elements on a webpage for automation testing purposes.
+-> Locators include ID, class name, name, tag name, link text, partial link text, and xpath.
+-> ID is the most efficient locator as it is unique for each element.
+-> Xpath is powerful but can be slow and brittle if not used correctly.
+-> Using CSS selectors is preferred over xpath for better performance.
+-> Locators can be used with findElement() and findElements() methods in Selenium.
+
+13) What is the scenario outline ?
+-> A Scenario Outline in Behavior-Driven Development (BDD) is used to run the same scenario multiple times with different sets of input data. 
