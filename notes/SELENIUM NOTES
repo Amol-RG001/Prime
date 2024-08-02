@@ -1,10 +1,10 @@
 SELENIUM NOTES
 
-1) what is selenium
--> 	it is  opern source automation test suite for web based application across different browser and different platform.
+Q: what is selenium
+-> 	it is  open source automation test suite for web based application across different browser and different platform.
 -> 	it support multiple programming languages like java, ruby, python.
 
-2) component of selenium
+Q: component of selenium
 ->	Selenium Software is not just a single tool but a suite of software, each piece catering to different Selenium QA testing needs of an organization. Here is the list of tools
 
 	a) Selenium Integrated Development Environment (IDE)
@@ -12,32 +12,32 @@ SELENIUM NOTES
 	c) WebDriver
 	d) Selenium Grid
 
-3) what is selenium IDE
+Q: what is selenium IDE
 -> 	Selenium IDE stands for Intregrated Developement Environment
 -> 	It is simple and easy to used
 -> 	It is used  as prototyping tool
 -> 	No prior programming knowledge is required
 -> 	No advanced testing can do in IDE
 
-4) What is selenium web driver
+Q: What is selenium web driver.
 -> 	it is a component of selenium suite
 -> 	it is a java interface implemented by browser classes
 -> 	it is an API(Application Programming Interface) mediator between browser and client libraries
 -> 	it has various commands to interact with web elements
 
-5) What is selenium grid
+Q: What is selenium grid.
 -> 	It allow test cases to run parallelly in 
 		a) different machines 
 		b) different plaforms 
 		c) different browers
 
-6) Advantages of selenium web driver
+Q: Advantages of selenium web driver
 -> 	it is a open source tool
 -> 	it supports multiple browers like (Firefox, Chrome, Opera etc.)
 -> 	it supports multiple platforms like (Windows, Linux, MacOs etc.)
 -> 	it supports multiple languages like (Java, Ruby, Python etc.)
 
-7) Dis-advantages of selenium web driver
+Q: Dis-advantages of selenium web driver
 -> 	it support web based application doesn't support window based application
 -> 	it does not have reporting feature
 -> 	it does not provide facilty for data driven testing
@@ -47,18 +47,22 @@ Third Party Tools To Overcome Disadvantages
 -> 	Data Driven testing - Apache POI
 -> 	Reporting - Extent Report
 
-8) BDD (Behavior-Driven Development)
--> BDD is a development approach that involves collaboration between developers, testers, and business stakeholders. It encourages writing test cases in a natural language that non-technical stakeholders can understand. This approach uses tools like Cucumber and Gherkin.
+Q: BDD (Behavior-Driven Development)
 
-9) Use of Driver in Selenium
+BDD is a development approach that involves collaboration between developers, testers, and business stakeholders. 
+It encourages writing test cases in a natural language that non-technical stakeholders can understand. 
+This approach uses tools like Cucumber and Gherkin.
+
+Q: Use of Driver in Selenium
 -> The WebDriver is used to control the browser. It can be used to open, navigate, and interact with web pages.
 
-10) What is the page factory Why do we use it?
+Q: What is the page factory Why do we use it?
 -> Page Factory is a class in Selenium that supports the Page Object Model design pattern. It helps to initialize elements of a Page Object class
 
-11)Fluent Wait is used to define the maximum amount of time to wait for a condition and the frequency with which to check the condition.
+Q: What is fluent wait ?
+-> Fluent Wait is an explicit wait in Selenium that allows you to set the maximum time and frequency to check a condition before throwing an exception. 
 
-12) What is locator in selenium ?
+Q: What is locator in selenium ?
 
 -> Locators in Selenium are used to identify web elements on a webpage for automation testing purposes.
 -> Locators include ID, class name, name, tag name, link text, partial link text, and xpath.
@@ -67,5 +71,400 @@ Third Party Tools To Overcome Disadvantages
 -> Using CSS selectors is preferred over xpath for better performance.
 -> Locators can be used with findElement() and findElements() methods in Selenium.
 
-13) What is the scenario outline ?
--> A Scenario Outline in Behavior-Driven Development (BDD) is used to run the same scenario multiple times with different sets of input data. 
+Q: What is the scenario outline ?
+-> A Scenario Outline in Behavior-Driven Development (BDD) is used 
+  to run the same scenario multiple times with different sets of input data. 
+
+Q: REST vs SOAP ?
+-> SOAP stands for Simple Object Access Protocol and REST stands for Representational State Transfer.
+
+-> Since SOAP is a protocol, it follows a strict standard to allow communication between the client and the server whereas REST is an architectural style that doesn’t follow any strict standard but follows six constraints defined by Roy Fielding in 2000. Those constraints are – Uniform Interface, Client-Server, Stateless, Cacheable, Layered System, Code on Demand.
+
+-> SOAP uses only XML for exchanging information in its message format whereas REST is not restricted to XML and its the choice of implementer which Media-Type to use like XML, JSON, Plain-text. Moreover, REST can use SOAP protocol but SOAP cannot use REST.
+
+-> On behalf of services interfaces to business logic, SOAP uses @WebService whereas REST instead of using interfaces uses URI like @Path.
+
+-> SOAP is difficult to implement and it requires more bandwidth whereas REST is easy to implement and requires less bandwidth such as smartphones.
+Benefits of SOAP over REST as SOAP has ACID compliance transaction. Some of the applications require transaction ability which is accepted by SOAP whereas REST lacks in it.
+
+-> On the basis of Security, SOAP has SSL( Secure Socket Layer) and WS-security whereas REST has SSL and HTTPS. In the case of Bank Account Password, Card Number, etc. SOAP is preferred over REST. The security issue is all about your application requirement, you have to build security on your own. It’s about what type of protocol you use.
+SOAP cannot make use of REST since SOAP is a protocol without any architectural pattern. REST can make use of SOAP because it is an architectural pattern having protocol.
+
+Q: How to input text in a textbox using Send Keys?
+
+Use the sendKeys method to input text into a textbox
+WebElement element = driver.findElement(By.name("textboxName"));
+element.sendKeys("text");
+
+Q: How to input text in a textbox without using Send Keys?
+
+Use JavaScriptExecutor to set the value of a textbox 
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("document.getElementsByName('textboxName')[0].value='text';");
+
+Q: How to handle hidden elements?
+
+Use JavaScriptExecutor to interact with hidden elements that are not visible on the page
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("document.getElementById('hiddenElementId').click();");
+
+Q: Why do we typecast JavaScriptExecutor?
+
+Typecasting: Convert WebDriver to JavascriptExecutor to use the executeScript method.
+JavascriptExecutor js = (JavascriptExecutor) driver;
+Purpose: This typecasting is necessary because WebDriver does not have the executeScript method. By typecasting to JavascriptExecutor, you can execute JavaScript commands within the browser, allowing for more advanced interactions such as manipulating DOM elements directly, handling hidden elements, and performing actions that are not possible with standard WebDriver methods.
+
+Q: Differences between isDisplayed, isSelected, and isEnabled?
+
+isDisplayed: Checks if an element is visible on the web page.
+isSelected: Checks if an element, like a checkbox or radio button, is selected.
+isEnabled: Checks if an element is enabled and interactable.
+
+Q: Differences between get and navigate to?
+
+get(): Loads a new web page in the current browser window.
+navigate().to(): Can navigate to a URL and allows additional navigation options like back, forward, and refresh.
+
+Q: Differences between NoSuchElementException and ElementNotVisibleException?
+
+NoSuchElementException: Thrown when an element cannot be found in the DOM.
+ElementNotVisibleException: Thrown when an element is present in the DOM but not visible on the page.
+
+Q: What is StaleElementReferenceException?
+
+Thrown when an element is no longer present in the DOM, typically after a page refresh or dynamic content load.
+
+Q: What is the DOM?
+Document Object Model (DOM): A programming interface for web documents, representing the structure of a web page as a tree of objects.
+
+Q: How is TestNG different from Selenium WebDriver?
+
+TestNG: A testing framework providing annotations, test configurations, parallel execution, and reporting.
+Selenium WebDriver: A tool for automating web browser interactions through code.
+
+Q: How can we disable or prevent a test case from running?
+
+@Test(enabled = false): Use this annotation to disable a specific test case in TestNG.
+
+Q: How can we make one test method dependent on others using TestNG?
+
+@Test(dependsOnMethods = "methodName"): Use this annotation to make a test method run only after specified methods.
+
+Q: How to parameterize TestNG tests using data providers?
+
+@DataProvider(name = "dataProviderName"): Create a method to provide test data.
+@Test(dataProvider = "dataProviderName"): Use this annotation to link the test method with the data provider.
+
+
+Q: How to handle drag and drop in Selenium?
+
+Action Class: Use the Actions class to build complex actions.
+Click and Hold: Select the source element to drag.
+Move to Element: Move to the target element where you want to drop.
+Release: Release the source element to complete the drop.
+Build and Perform: Combine all actions and execute them.
+
+Code
+WebElement fromElement = driver.findElement(By Locator of fromElement);
+WebElement toElement = driver.findElement(By Locator of toElement);
+Actions builder = new Actions(driver);
+Action dragAndDrop = builder.clickAndHold(fromElement)
+ .moveToElement(toElement)
+ .release(toElement)
+ .build();
+dragAndDrop.perform();
+
+Q: How to handle browser popup windows using window handles in Selenium?
+
+Get Window Handles: Retrieve all window handles.
+Iterator: Use an iterator to navigate through the handles.
+Parent Window: Store the handle of the main window.
+Child Window: Store the handle of the popup window.
+Switch to Child: Switch the driver's focus to the popup window.
+Perform Actions: Execute the necessary actions on the popup window.
+Close Child: Close the popup window after performing actions.
+Switch to Parent: Switch back to the main window.
+
+Code
+Set<String> handles = driver.getWindowHandles();
+Iterator<String> it = handles.iterator();
+String parentWindowId = it.next();
+String childWindowId = it.next();
+driver.switchTo().window(childWindowId);
+driver.close();
+driver.switchTo().window(parentWindowId);
+
+Q: How to handle alerts or popups in Selenium?
+
+Switch to Alert: driver.switchTo().alert()
+Get Text from Alert: alert.getText()
+Accept Alert: alert.accept()
+Dismiss Alert: alert.dismiss()
+
+Q: How to handle iframes in Selenium?
+
+Switch to iframe:
+By Index: driver.switchTo().frame(index)
+By Name or ID: driver.switchTo().frame("nameOrId")
+Then after switching - 
+Perform Action: Locate elements and interact with them within the iframe, e.g., driver.findElement(By.id("elementID"))
+
+Q: How do you know an element is within an iframe?
+
+Use browser developer tools to inspect the page structure. If an element is inside an <iframe> tag, it needs to be accessed by switching to that iframe first.
+
+Q: What is the difference between relative and absolute XPath? Which is preferable and why? Any issues/disadvantages with absolute XPath?
+
+Relative XPath:
+Starts from the middle of the HTML DOM structure.
+Syntax: //tagname[@attribute='value']
+
+Advantages:
+More Flexible: Adapts better to changes in the DOM structure.
+Easier to Write and Maintain: Shorter and simpler syntax.
+Less Fragile: Less likely to break with minor changes to the HTML.
+
+Absolute XPath:
+Starts from the root node and navigates through each node to the target element.
+Syntax: /html/body/div/div[2]/div[1]/a
+
+Issues/Disadvantages:
+Slow Performance: Navigates from the root to the required node, making it slower.
+Highly Fragile: Any change in the node hierarchy can break the XPath.
+Difficult to Maintain: Longer and more complex syntax, harder to update with changes in the DOM.
+
+Why Prefer Relative XPath?
+
+Flexibility: Can adapt to changes in the DOM structure without breaking.
+Stability: Provides more robust and resilient locators compared to absolute XPath.
+Performance: Faster as it doesn't need to traverse the entire DOM.
+
+Q: What is XPath and How does it actually works?
+
+XPath (XML Path Language) is a syntax used for navigating through elements and attributes in an XML document. In Selenium, it helps locate elements on a webpage.
+
+How it works:
+
+Path Expressions: XPath uses path expressions to select nodes or node sets in an XML document.
+Absolute XPath: Starts from the root element and goes down to the desired element (e.g., /html/body/div).
+Relative XPath: Starts from anywhere in the document, searching for the desired element (e.g., //div[@id='example']).
+Functions: Supports various functions to find elements (e.g., contains(), text(), starts-with()).
+Axes: Allows navigation to related nodes (e.g., parent, child, sibling).
+
+Q: What are Scenario and Scenario Outline in a Cucumber file?
+
+Scenario: Defines a single test case with specific steps.
+Scenario Outline: Used for data-driven testing, allowing you to run the same scenario with different sets of data.
+
+Q: What is Given-When-Then in Cucumber? Can we use them randomly or do we have to use them in a series?
+
+Given-When-Then:
+Given: Describes the initial context or setup.
+When: Describes the action or event.
+Then: Describes the expected outcome or result.
+
+Usage: Must be used in a series (Given-When-Then) to define the flow of a scenario properly.
+
+Q: What are Background and Hooks? What is the key difference between them?
+
+Background: Defines steps that are common to all scenarios in a feature file and are executed before each scenario.
+Hooks: Allow you to run code before or after each scenario or step (e.g., setup or teardown code).
+
+Key Difference:
+Background: Specific to a feature file.
+Hooks: Can be used globally across multiple feature files.
+
+Q: Should test cases be dependent on one another? If 10 test cases are dependent on a single test case, what happens if that test case fails? What is the best approach to handle dependencies?
+
+Dependency of Test Cases
+Not a Good Practice - Making test cases dependent on one another can lead to a cascade of failures. For example, if Test Case A fails, and Test Cases B through K depend on A, then B through K will likely fail as well, making it difficult to determine the actual root cause of the issue.
+
+Approach 
+1. Isolate Test Cases
+Ensure each test case can run independently. This reduces the risk of cascading failures and makes it easier to identify issues.
+Example: Instead of having a login test that all other tests depend on, include the login steps within each test case or use setup methods to handle the login.
+2. Reusable Setup Methods
+Avoid duplicating login tests by using reusable setup methods.
+Example: Use the @BeforeMethod annotation in TestNG to perform the login once before each test method.
+3. Mocking and Stubbing
+ Use mocks and stubs to isolate dependencies and create predictable test environments.
+Example: If a test case depends on an external API, use a mock server to simulate the API responses instead of relying on the actual API.
+4. Retry Logic
+Implement retry logic for flaky tests to avoid false negatives due to intermittent issues.
+Example: Configure your test framework to retry a test case a certain number of times before marking it as failed.
+5. Setup and Teardown
+Use setup and teardown methods to ensure each test starts with a clean state.
+Example: Use the @BeforeMethod and @AfterMethod annotations in TestNG to reset the state before and after each test method.
+
+Q. What are the types of annotations in TestNG?
+1. Pre-conditions:
+These annotations set up the environment before the actual test runs. For example, @BeforeMethod runs before each test method to initialize test data or open a browser.
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+2. Test:
+ This is the actual test case logic, annotated with @Test, where the testing actions and assertions are performed.
+@Test
+3. Post-conditions:
+ These annotations clean up the environment after the test has run. For example, @AfterMethod runs after each test method to close the browser or reset data.
+These annotations clean up the environment after the test has run. For example, @AfterMethod runs after each test method to close the browser or reset data.
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
+Q. What is the sequence of annotations?
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
+Q. Difference between @BeforeMethod and @BeforeTest?
+@BeforeMethod: Runs before each test method. This means it will execute before each individual test, ensuring that the setup specific to that test method is done properly.
+@BeforeTest: Runs before any test method in the test class. This means it will execute once before any of the test methods in the class are run, making it suitable for setting up shared resources or configurations that all tests in the class will use.
+
+Q: What are the different components of Selenium?
+
+Selenium IDE: A record and playback tool for creating test scripts without programming.
+Selenium WebDriver: A tool for writing test scripts in various programming languages to interact with web browsers.
+Selenium Grid: Enables running tests in parallel across different machines and browsers for distributed test execution.
+Selenium RC (Remote Control): An older tool for writing automated web application UI tests.
+
+Q: Can we run parallel test cases without Selenium Grid? If yes, then why does Selenium Grid come into the picture?
+
+Yes, parallel test cases can be run without Selenium Grid using frameworks like:
+TestNG: Allows configuration for parallel test execution.
+JUnit: Supports parallel execution with appropriate configurations.
+Cucumber: Can be configured for parallel execution with plugins like Maven Surefire.
+
+Why Selenium Grid?
+Scalability: Run tests on multiple machines and browsers simultaneously.
+Cross-Browser Testing: Test on different browser versions and operating systems.
+Distributed Execution: Reduce test execution time by distributing tests across multiple nodes.
+
+Q: Key differences between Selenium Grid and TestNG
+
+Purpose:
+Selenium Grid: Focuses on distributed and parallel test execution across multiple environments.
+TestNG: A testing framework that provides annotations, test configurations, and supports parallel execution within a single machine.
+
+Parallel Execution:
+Selenium Grid: Achieves parallel execution by distributing tests to different nodes/machines.
+TestNG: Achieves parallel execution within the same machine or JVM.
+
+Configuration:
+Selenium Grid: Requires setting up hub and nodes.
+TestNG: Configured through the testng.xml file.
+
+Q: What are the top 5 advantages of Selenium?
+
+Open Source: Selenium is free to use and has a large community for support and updates.
+Cross-Browser Compatibility: Supports multiple browsers like Chrome, Firefox, Safari, and Internet Explorer.
+Cross-Platform Support: Can run on various operating systems including Windows, macOS, and Linux.
+Supports Multiple Programming Languages: Works with Java, C#, Python, Ruby, and more.
+Integration with Other Tools: Easily integrates with tools like Maven, Jenkins, and Docker for CI/CD.
+
+Q: What are the top 5 advantages of TestNG?
+
+Flexible Test Configuration: Allows creating and managing test configurations with ease.
+Parallel Execution: Supports running tests in parallel, improving execution speed.
+Detailed Reporting: Provides comprehensive and customizable test reports.
+Annotations: Simplifies the creation of test cases with annotations like @BeforeMethod, @AfterMethod, etc.
+Data-Driven Testing: Supports parameterization of test methods to run tests with multiple sets of data.
+
+Question: What Test Automation Selenium Framework? Or Explain Test Automation Selenium Framework?
+
+1. Definition: A Selenium test automation framework is a structured approach to automate web application testing efficiently. It combines tools, best practices, and design patterns to create effective and maintainable test scripts.
+
+2. Key Components:
+Programming Language: Java + Selenium – The main language for writing test scripts. Java is commonly used due to its industry-wide acceptance.
+IDE: Eclipse – A popular Java IDE for coding and managing your test scripts.
+Testing Framework: TestNG – Manages test execution, provides features like test grouping, parallel execution, and reporting.
+Version Control: GIT – Tracks changes in test scripts and supports team collaboration.
+Continuous Integration: Jenkins – Automates test execution and integrates with tools like Maven for continuous integration.
+
+3. Key Features:
+Page Object Model (POM): Separates page-specific logic into different classes for maintainability.
+Test Base Class: Centralizes WebDriver setup and configuration.
+Utility Class: Contains reusable functions like taking screenshots.
+Property Files: Stores configurations like browser type and URLs.
+Test Data: Managed through Excel sheets and Apache POI for data-driven testing.
+TestNG: Organizes and runs tests, supports parallel and grouped test executions.
+Maven: Manages project dependencies and builds.
+Jenkins: Automates test runs and integrates with build pipelines.
+
+Sample Answer
+"Our Selenium framework uses Java for scripting and TestNG as the testing framework. We manage dependencies with Maven and use GitHub for version control. The framework is designed with a Data Driven approach and Page Object Model for maintainability. We read test data from Excel using Apache POI and generate detailed reports with Extent Reports. For logging, we use Log4j2 and capture screenshots for failed tests. We follow the DRY Principle to avoid redundancy, create page classes for common components, and use TestNG XML files to manage Test Suites like Sanity and Regression. Jenkins handles test execution and schedules the test suites based on their runtime, e.g., Sanity Suite runs daily and Regression Suites run nightly or weekly."
+
+Key Differences Between Selenium 3 and Selenium 4
+
+1. Protocol:
+Selenium 3: Uses the JSON Wire Protocol, leading to inconsistencies across browsers.
+Selenium 4: Adopts the W3C WebDriver Protocol, ensuring better standardization and cross-browser compatibility.
+
+2. ChromeDriver:
+Selenium 3: Less optimized integration with ChromeDriver, potential performance issues.
+Selenium 4: Improved integration with the latest ChromeDriver, offering enhanced performance and stability.
+
+3. Methods and Features:
+Selenium 3:Basic element locators.Limited window management.
+Selenium 4:Relative Locators: Locate elements relative to other elements (above(), below(), toLeftOf(), toRightOf(), near()).
+Chrome DevTools Protocol: Allows deeper browser interactions like capturing network requests and performance metrics.
+New Window Management: Methods for handling multiple windows and tabs more efficiently (newWindow()).
+
+Q: How does Selenium work?
+
+Selenium automates web browsers using WebDriver, which communicates with the browser. Here’s a simple explanation of its architecture and an example:
+Architecture:
+
+Test Script: Written in languages like Java, Python, etc.
+WebDriver: Acts as a bridge between the test script and the browser.
+JSON Wire Protocol: Used by WebDriver to communicate with the browser driver.
+Browser Driver: Specific to each browser (ChromeDriver for Chrome, GeckoDriver for Firefox).
+Browser: Where the tests are executed.
+
+Flow:
+The test script sends commands to the WebDriver.
+WebDriver translates these commands into JSON format and sends them using the JSON Wire Protocol to the Browser Driver.
+The Browser Driver communicates with the browser to perform actions like clicking a button or entering text.
+Results are sent back in the reverse order.
+
+#Driver Close - This method closes the current window the WebDriver is currently focused on, leaving other windows unaffected.
+
+#Driver Quit - Unlike driver.close(), driver.quit() terminates the entire WebDriver session, closing all windows associated with it. It's the final goodbye to the WebDriver session.
+
+
+Q: explain fluent wait , implicit wait and explicit wait in selenium ?
+
+#Implicit wait:
+
+Implicit wait instructs the WebDriver to wait for a certain amount of time when trying to find an element if it is not immediately present. 
+It applies to all elements and has a global scope.
+
+Usage: When you want to set a default waiting time for each element in your test script.
+Limitations: It's a one-size-fits-all approach and may not be suitable for all situations, especially for dynamic content.
+
+#Explicit Wait:
+
+Explicit wait allows you to wait for a specific condition to be met before proceeding further in the code. 
+It's more flexible and can be applied to individual elements.
+
+Usage: When you need to wait for a particular element or condition, such as visibility, presence, or a specific state of an element.
+Advantages: More control and specificity compared to implicit waits.
+
+#Fluent wait:
+
+Fluent wait is a more advanced form of explicit wait. 
+It allows you to specify the frequency with which the WebDriver will check the condition before throwing an exception. 
+It also allows you to ignore specific exceptions.
+
+Usage: When you need a more customized waiting strategy, including polling frequency and exception handling.
+Advantages: Offers the highest level of control over the waiting behavior.
+
+
